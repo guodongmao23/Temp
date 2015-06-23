@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var rob = function(nums) {
+   if(nums.length==0) return 0;
+	var take=0;
+	var nontake=0;
+	var maxProfit=0;
+	for(var i=0;i<nums.length;i++){
+		take=nontake+nums[i];
+		nontake=maxProfit;
+		maxProfit=Math.max(take,nontake);
+	}
+	return maxProfit;
+}
+alert(minimumTotal([[1],[2,3]]));
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
